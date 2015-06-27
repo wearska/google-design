@@ -1,0 +1,37 @@
+{
+  "name": "google-design",
+  "main": [
+    "google-design.js",
+    "google-design.css"
+],
+  "version": "0.0.0",
+  "homepage": "https://github.com/wearska/google-design",
+  "authors": [
+    "wearska <wearska@gmail.com>"
+  ],
+  "description": "A visual design framework based on Google's Material Design",
+  "keywords": [
+    "google",
+    "material",
+    "design",
+    "paper",
+    "framework",
+    "ui",
+    "css",
+    "custom-elements",
+    "web-components"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "gulp",
+    "gulpfile.js"
+  ],
+  "dependencies": {
+    "webcomponents.js": "^0.7.5"
+  }
+}
