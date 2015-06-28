@@ -1,0 +1,18 @@
+.flat{
+	box-shadow: 0;
+}
+
+.resting{
+	box-shadow:0 1px 1px 0 rgba(0,0,0,0.06), 0 1px 3px 0 rgba(0,0,0,0.06);
+}
+
+.raised{
+	box-shadow:0 1px 2px 0 rgba(0,0,0,0.06), 0 3px 5px 0 rgba(0,0,0,0.12);
+}
+.floating{
+	box-shadow:0 15px 25px 0 rgba(0,0,0,0.12), 0 20px 25px 0 rgba(0,0,0,0.12);
+}
+
+.elevated{
+	box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.12), 0 25px 80px 0 rgba(0, 0, 0, 0.12);
+}

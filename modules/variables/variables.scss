@@ -1,0 +1,44 @@
+// Branding
+$brand-primary: color("teal", "base") !default;
+$brand-primary-accent: color("teal", "accent-4") !default;
+$brand-secondary: color("grey", "base") !default;
+$brand-secondary-accent: color("grey", "lighten-1") !default;
+$brand-third: color("grey", "base") !default;
+$brand-third-accent: color("grey", "lighten-1") !default;
+
+// Typography
+$thin: 100 !default;
+$light: 300 !default;
+$regular: 400 !default;
+$medium: 500 !default;
+$bold: 700 !default;
+$black: 900 !default;
+
+// Breakpoints
+$xsmall-display-min: 0px !default;
+$xsmall-display-max: 480px !default;
+$small-display-min: 481px !default;
+$small-display-max: 840px !default;
+$medium-display-min: 841px !default;
+$medium-display-max: 1280px !default;
+$large-display-min: 1281px !default;
+$large-display-max: 1920px !default;
+$xlarge-display-min: 1921px !default;
+
+$xsmall-only: "only screen and (max-width : #{$xsmall-display-max})" !default;
+$small-and-up: "only screen and (min-width : #{$small-display-min})" !default;
+$small-only: "only screen and (min-width : #{$small-display-min}) and (max-width : #{$small-display-max})" !default;
+$medium-and-up: "only screen and (min-width : #{$medium-display-min})" !default;
+$medium-only: "only screen and (min-width : #{$medium-display-min}) and (max-width : #{$medium-display-max})" !default;
+$large-and-up: "only screen and (min-width : #{$large-display-min})" !default;
+$large-only: "only screen and (min-width : #{$large-display-min}) and (max-width : #{$large-display-max})" !default;
+$xlarge-and-up: "only screen and (min-width : #{$xlarge-display-min})" !default;
+
+/*-- Metrics & keylines --*/
+$base-grid: 4px !default;
+$vertical-sizing: 2*$base-grid !default;
+$vertical-keyline: $base-grid !default;
+$horizontal-margin: 0 4*$base-grid !default;
+$content-padding: 4*$base-grid !default;
+$grid-gutter: $base-grid !default;
+$increment-keyline: 8*$base-grid !default;

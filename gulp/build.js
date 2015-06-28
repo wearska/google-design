@@ -1,47 +1,29 @@
 'use strict';
 
 var gulp = require('gulp');
+var $ = require('gulp-load-plugins')();
+var wiredep = require('wiredep').stream;
 
-var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
-});
+module.exports = function(options) {
 
-module.exports = function (options) {
+    gulp.task('build', ['inject', 'other', 'clean'], function () {
+      var jsFilter = $.filter('**/*.js');
+      var cssFilter = $.filter('**/*.css');
+      var assets;
 
-    gulp.task('html', ['inject'], function () {
-
-        var htmlFilter = $.filter('*.html');
-        var jsFilter = $.filter('**/*.js');
-        var cssFilter = $.filter('**/*.css');
-        var assets;
-
-        return gulp.src(options.tmp + '/serve/*.html')
-            .pipe(assets = $.useref.assets())
-            .pipe($.rev())
-            .pipe(jsFilter)
-            .pipe($.uglify({
-                preserveComments: $.uglifySaveLicense
-            })).on('error', options.errorHandler('Uglify'))
-            .pipe(jsFilter.restore())
-            .pipe(cssFilter)
-            .pipe($.minifyCss())
-            .pipe(cssFilter.restore())
-            .pipe(assets.restore())
-            .pipe($.useref())
-            .pipe($.revReplace())
-            .pipe(htmlFilter)
-            .pipe($.minifyHtml({
-                empty: true,
-                spare: true,
-                quotes: true,
-                conditionals: true
-            }))
-            .pipe(htmlFilter.restore())
-            .pipe(gulp.dest(options.dist + '/'))
-            .pipe($.size({
-                title: options.dist + '/',
-                showFiles: true
-            }));
+      return gulp.src(options.app + 'index.html')
+      .pipe(assets = $.useref.assets())
+      .pipe(jsFilter)
+      .pipe($.ngAnnotate())
+      .pipe($.uglify({ preserveComments: $.uglifySaveLicense })).on('error', options.errorHandler('Uglify'))
+      .pipe(jsFilter.restore())
+      .pipe(cssFilter)
+      .pipe($.minifyCss())
+      .pipe(cssFilter.restore())
+      .pipe(assets.restore())
+      .pipe($.useref())
+      .pipe(gulp.dest(options.dist + '/'))
+      .pipe($.size({ title: options.dist + '/', showFiles: true }));
     });
 
     // Only applies for fonts from bower dependencies
@@ -64,18 +46,21 @@ module.exports = function (options) {
 
     gulp.task('other', ['fontconvert'], function () {
         return gulp.src([
-                options.app + '/**/*',
-                '!' + options.app + '/**/*.{css,js,scss,ttf}',
-                '!' + options.app + '/index.html',
-                '!' + options.app + '/**/components/**/*.js'
+                options.app + '**/*',
+                options.app + '.htaccess',
+                '!' + options.app + '/**/*.{css,js,scss,ttf,json}',
+                '!' + options.app + 'index.html',
+                '!' + options.app + 'scripts/**/*',
+                '!' + options.app + 'scripts',
+                '!' + options.app + 'styles/**/*',
+                '!' + options.app + 'styles',
+                '!' + options.app + 'node_modules/**/*',
+                '!' + options.app + 'node_modules',
+                '!' + options.app + 'bower_components/**/*',
+                '!' + options.app + 'bower_components',
+                '!' + options.app + 'gulp/**/*',
+                '!' + options.app + 'gulp'
             ])
             .pipe(gulp.dest(options.dist + '/'));
     });
-
-    gulp.task('clean', function (done) {
-        $.del([options.dist + '/', options.tmp + '/'], done);
-    });
-
-    gulp.task('build', ['html', 'fonts', 'other']);
-
 };

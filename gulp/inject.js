@@ -8,30 +8,27 @@ var wiredep = require('wiredep').stream;
 
 module.exports = function (options) {
 
-    gulp.task('inject', ['scripts', 'styles'], function () {
+    gulp.task('inject',['styles', 'scripts'], function () {
         var injectStyles = gulp.src([
-          options.tmp + '/serve/styles/style.css'
+          options.app + 'google-design.css'
         ], {
             read: false
         });
 
         var injectScripts = gulp.src([
-          options.app + '/scripts/components/**/*.js',
-            options.app + '/scripts/app.js'
+            options.app + 'google-design.js'
         ], {
             read: false,
         });
 
         var injectOptions = {
-            ignorePath: [options.app, options.tmp + '/serve'],
             addRootSlash: false
         };
 
-        return gulp.src(options.app + '/*.html')
+        return gulp.src(options.app + 'index.html')
             .pipe($.inject(injectStyles, injectOptions))
             .pipe($.inject(injectScripts, injectOptions))
             .pipe(wiredep(options.wiredep))
-            .pipe(gulp.dest(options.tmp + '/serve'));
+            .pipe(gulp.dest(options.app));
     });
-
 };

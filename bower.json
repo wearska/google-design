@@ -3,7 +3,7 @@
   "main": [
     "google-design.js",
     "google-design.css"
-],
+  ],
   "version": "0.0.0",
   "homepage": "https://github.com/wearska/google-design",
   "authors": [
@@ -26,12 +26,15 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "dev",
     "test",
     "tests",
     "gulp",
-    "gulpfile.js"
+    "gulpfile.js",
+    "index.html"
   ],
   "dependencies": {
-    "webcomponents.js": "^0.7.5"
+    "webcomponents.js": "^0.7.5",
+    "jquery": "~2.1.4"
   }
 }

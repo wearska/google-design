@@ -1,23 +1,22 @@
 'use strict';
 
 var gulp = require('gulp');
-var browserSync = require('browser-sync');
-
+var series = require('stream-series');
 var $ = require('gulp-load-plugins')();
+var wiredep = require('wiredep').stream;
 
-
-module.exports = function (options) {
-
-    gulp.task('scripts', function () {
+module.exports = function(options) {
+    gulp.task('scripts', function() {
 
         return gulp.src([
-        options.app + '/**/*.js'])
-            .pipe($.jshint())
-            .pipe($.jshint.reporter('jshint-stylish'))
-            .pipe(browserSync.reload({
-                stream: true 
+                options.app + 'modules/**/*.js'
+            ])
+            .pipe($.concat('google-design.js'))
+            .pipe(gulp.dest(options.app))
+            .pipe($.uglify({ preserveComments: $.uglifySaveLicense })).on('error', options.errorHandler('Uglify'))
+            .pipe($.rename({
+                suffix : '.min'
             }))
-            .pipe($.size());
+            .pipe(gulp.dest(options.app))
     });
-
 };

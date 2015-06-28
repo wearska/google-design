@@ -1,29 +1,25 @@
 'use strict';
 
 var gulp = require('gulp');
-var browserSync = require('browser-sync');
-
+var series = require('stream-series');
 var $ = require('gulp-load-plugins')();
-
 var wiredep = require('wiredep').stream;
 
-module.exports = function (options) {
-
-
-    gulp.task('styles', function () {
+module.exports = function(options) {
+    gulp.task('styles', function() {
 
         var sassOptions = {
             style: 'expanded'
         };
 
-        var injectFiles = gulp.src([
-      options.app + '/styles/style.scss',
-    ], {
-            read: false
-        });
+        var variables = gulp.src([options.app + 'modules/variables/**/*.scss'], {read: false});
+        var core = gulp.src([options.app + 'modules/core/**/*.scss'], {read: false});
+        var layout = gulp.src([options.app + 'modules/layout/**/*.scss'], {read: false});
+        var animations = gulp.src([options.app + 'modules/animations/**/*.scss'], {read: false});
+        var components = gulp.src([options.app + 'modules/components/**/*.scss'], {read: false});
 
         var injectOptions = {
-            transform: function (filePath) {
+            transform: function(filePath) {
                 filePath = filePath.replace(options.app + '/styles/', '');
                 return '@import \'' + filePath + '\';';
             },
@@ -32,25 +28,21 @@ module.exports = function (options) {
             addRootSlash: false
         };
 
-        var indexFilter = $.filter('style.scss');
 
         return gulp.src([
-      options.app + '/styles/style.scss'
-    ])
-            .pipe(indexFilter)
-            .pipe($.inject(injectFiles, injectOptions))
-            .pipe(indexFilter.restore())
-            .pipe($.sourcemaps.init())
+                options.app + 'modules/google-design.scss'
+            ])
+            .pipe($.inject(series(variables, core, layout, animations, components), injectOptions))
             .pipe($.sass(sassOptions)).on('error', options.errorHandler('Sass'))
             .pipe($.autoprefixer({
                 browsers: ['last 2 versions'],
                 cascade: false
             })).on('error', options.errorHandler('Autoprefixer'))
-            .pipe($.sourcemaps.write())
-            .pipe(gulp.dest(options.tmp + '/serve/styles/'))
-            .pipe(browserSync.reload({
-                stream: true 
-            }));
+            .pipe(gulp.dest(options.app))
+            .pipe($.minifyCss())
+            .pipe($.rename({
+                suffix : '.min'
+            }))
+            .pipe(gulp.dest(options.app))
     });
-
 };

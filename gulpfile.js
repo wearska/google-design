@@ -9,9 +9,7 @@ var util = require('util');
 
 var options = {
     //src: 'src',
-    app: 'app',
-    dist: 'dist',
-    tmp: '.tmp',
+    app: '',
     errorHandler: function (title) {
         return function (err) {
             gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
