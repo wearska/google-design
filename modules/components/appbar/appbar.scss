@@ -1,5 +1,4 @@
-
-gd-appbar{
+#appbar {
     background-color: inherit;
     color: inherit;
     display: flex;
@@ -7,4 +6,36 @@ gd-appbar{
     width: 100%;
     height: 1.75 * $increment-keyline;
     transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    #appbar-nav, #appbar-extension {
+        height: 1.75 * $increment-keyline;
+        line-height: 1.75 * $increment-keyline;
+    }
+    #appbar-nav {
+        //default app-bar
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 $vertical-keyline;
+        overflow: hidden;
+        will-change: transform, height, color, background-color;
+        transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #appbar-extension {
+        @extend #appbar-nav;
+        position: relative;
+        .app-view-title {
+            @extend .mono;
+            position: absolute;
+            padding-left: 3 * $vertical-keyline;
+            bottom: 0;
+            @extend .display2;
+            height: 2.25 * $increment-keyline;
+            line-height: 2.25 * $increment-keyline;
+            @extend .overkill;
+            display: none;
+            will-change: opacity;
+            transition: opacity .3s ease;
+        }
+    }
 }

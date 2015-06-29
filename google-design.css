@@ -1895,6 +1895,119 @@ td, th {
   -webkit-font-feature-settings: 'liga';
   font-feature-settings: 'liga'; }
 
+/*-- Visibility --*/
+.hidden, .overkill, #appbar #appbar-extension .app-view-title {
+  display: none;
+  visibility: hidden; }
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+.off-screen {
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute !important;
+  width: 1px; }
+
+.invisible {
+  visibility: hidden; }
+
+.overkill, #appbar #appbar-extension .app-view-title {
+  opacity: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none; }
+
+.revive {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  -webkit-user-select: init;
+  -moz-user-select: init;
+  -ms-user-select: init;
+  user-select: init;
+  pointer-events: auto; }
+
+@media only screen and (min-width : 481px) {
+  .xsmall-only {
+    display: none; } }
+
+.small-only {
+  display: none; }
+  @media only screen and (min-width : 481px) and (max-width : 840px) {
+    .small-only {
+      display: block; } }
+
+.medium-only {
+  display: none; }
+  @media only screen and (min-width : 841px) and (max-width : 1280px) {
+    .medium-only {
+      display: block; } }
+
+.large-only {
+  display: none; }
+  @media only screen and (min-width : 1281px) and (max-width : 1920px) {
+    .large-only {
+      display: block; } }
+
+.xlarge-only {
+  display: none; }
+  @media only screen and (min-width : 1921px) {
+    .xlarge-only {
+      display: block; } }
+
+@media only screen and (min-width : 841px) {
+  .mobile-only {
+    display: none; } }
+
+.desktop-only {
+  display: none; }
+  @media only screen and (min-width : 1281px) {
+    .desktop-only {
+      display: block; } }
+
+.hide-on-small {
+  display: none; }
+  @media only screen and (min-width : 841px) {
+    .hide-on-small {
+      display: block; } }
+
+.vcenter-test {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 1000000;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
 .flat {
   box-shadow: 0; }
 
@@ -1912,7 +2025,7 @@ td, th {
 
 .gd-theme-light .icon-color, .gd-theme-light i, .gd-theme-light i, .gd-theme-light .primary-text-color, .gd-theme-light html, .gd-theme-light *, .gd-theme-light .headline, .gd-theme-light .title, .gd-theme-light .subhead, .gd-theme-light .body2, .gd-theme-light .body1, .gd-theme-light button {
   color: rgba(0, 0, 0, 0.87); }
-.gd-theme-light .secondary-text-color, .gd-theme-light .display4, .gd-theme-light .display3, .gd-theme-light .display2, .gd-theme-light .display1, .gd-theme-light .caption {
+.gd-theme-light .secondary-text-color, .gd-theme-light .display4, .gd-theme-light .display3, .gd-theme-light .display2, .gd-theme-light #appbar #appbar-extension .app-view-title, #appbar #appbar-extension .gd-theme-light .app-view-title, .gd-theme-light .display1, .gd-theme-light .caption {
   color: rgba(0, 0, 0, 0.54); }
 .gd-theme-light .disabled, .gd-theme-light .disabled-color, .gd-theme-light .hint-text-color {
   color: rgba(0, 0, 0, 0.26); }
@@ -1923,7 +2036,7 @@ td, th {
 
 .gd-theme-dark .icon-color, .gd-theme-dark i, .gd-theme-dark i, .gd-theme-dark .primary-text-color, .gd-theme-dark html, .gd-theme-dark *, .gd-theme-dark .headline, .gd-theme-dark .title, .gd-theme-dark .subhead, .gd-theme-dark .body2, .gd-theme-dark .body1, .gd-theme-dark button {
   color: white; }
-.gd-theme-dark .secondary-text-color, .gd-theme-dark .display4, .gd-theme-dark .display3, .gd-theme-dark .display2, .gd-theme-dark .display1, .gd-theme-dark .caption {
+.gd-theme-dark .secondary-text-color, .gd-theme-dark .display4, .gd-theme-dark .display3, .gd-theme-dark .display2, .gd-theme-dark #appbar #appbar-extension .app-view-title, #appbar #appbar-extension .gd-theme-dark .app-view-title, .gd-theme-dark .display1, .gd-theme-dark .caption {
   color: rgba(255, 255, 255, 0.7); }
 .gd-theme-dark .disabled, .gd-theme-dark .disabled-color, .gd-theme-dark .hint-text-color {
   color: rgba(255, 255, 255, 0.3); }
@@ -1962,7 +2075,7 @@ html {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-.mono, .display4, .display3, .display2, .display1 {
+.mono, .display4, .display3, .display2, #appbar #appbar-extension .app-view-title, .display1 {
   font-family: "Roboto Mono", "Roboto", "Noto", sans-serif; }
 
 h1, h2, h3, h4, h5, h6, p, span {
@@ -1993,7 +2106,7 @@ h1, h2, h3, h4, h5, h6, p, span {
   font-weight: 400;
   text-indent: -4px; }
 
-.display2 {
+.display2, #appbar #appbar-extension .app-view-title {
   font-size: 45px;
   line-height: 48px;
   font-weight: 400;
@@ -2177,84 +2290,7 @@ header.site-header {
   left: 0;
   z-index: 10000; }
 
-/* ANIMATIONS
-   ========================================================================== */
-@-webkit-keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%); }
-
-  30% {
-    opacity: 0; }
-
-  80% {
-    opacity: 1; }
-
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0); } }
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%); }
-
-  30% {
-    opacity: 0; }
-
-  80% {
-    opacity: 1; }
-
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0); } }
-
-.fade-in-up {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp;
-  -webkit-animation-duration: .3s;
-  animation-duration: .3s; }
-
-@-webkit-keyframes fadeInUpLong {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(300%);
-    transform: translateY(300%); }
-
-  30% {
-    opacity: 0; }
-
-  80% {
-    opacity: 1; }
-
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0); } }
-
-@keyframes fadeInUpLong {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(300%);
-    transform: translateY(300%); }
-
-  30% {
-    opacity: 0; }
-
-  80% {
-    opacity: 1; }
-
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0); } }
-
-.fade-in-up-long {
-  -webkit-animation-name: fadeInUpLong;
-  animation-name: fadeInUpLong;
-  -webkit-animation-duration: .38s;
-  animation-duration: .38s; }
-
-gd-appbar {
+#appbar {
   background-color: inherit;
   color: inherit;
   display: -webkit-flex;
@@ -2264,3 +2300,26 @@ gd-appbar {
   width: 100%;
   height: 56px;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
+  #appbar #appbar-nav, #appbar #appbar-extension, #appbar #appbar-extension {
+    height: 56px;
+    line-height: 56px; }
+  #appbar #appbar-nav, #appbar #appbar-extension {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 4px;
+    overflow: hidden;
+    will-change: transform, height, color, background-color;
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
+  #appbar #appbar-extension {
+    position: relative; }
+    #appbar #appbar-extension .app-view-title {
+      position: absolute;
+      padding-left: 12px;
+      bottom: 0;
+      height: 72px;
+      line-height: 72px;
+      display: none;
+      will-change: opacity;
+      transition: opacity .3s ease; }
