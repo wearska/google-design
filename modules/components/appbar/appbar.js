@@ -110,7 +110,7 @@
                     '<nav>' +
                         '<h2 class="off-screen">Main Navigation</h2>' +
                         '<ul class="tabs-list">' +
-                            '<li class="tab app-logo"><a href="/"></a></li>' +
+                            '<li class="app-logo"><a href="/"></a></li>' +
                             '<span flex></span>' +
                             '<li class="tab"><a href=""></a></li>' +
                         '</ul>' +

@@ -2023,26 +2023,26 @@ td, th {
 .elevated {
   box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.12), 0 25px 80px 0 rgba(0, 0, 0, 0.12); }
 
-.gd-theme-light .icon-color, .gd-theme-light i, .gd-theme-light i, .gd-theme-light .primary-text-color, .gd-theme-light html, .gd-theme-light *, .gd-theme-light .headline, .gd-theme-light .title, .gd-theme-light .subhead, .gd-theme-light .body2, .gd-theme-light .body1, .gd-theme-light button {
+.gd-theme-light .icon-color, .gd-theme-light i, .gd-theme-light i, .gd-theme-light .primary-text-color, .gd-theme-light html, .gd-theme-light *, .gd-theme-light .headline, .gd-theme-light .title, .gd-theme-light .subhead, .gd-theme-light .body2, .gd-theme-light .body1, .gd-theme-light button, .gd-theme-light #appbar #appbar-nav nav ul li.active, #appbar #appbar-nav nav ul .gd-theme-light li.active, .gd-theme-light #appbar #appbar-extension nav ul li.active, #appbar #appbar-extension nav ul .gd-theme-light li.active {
   color: rgba(0, 0, 0, 0.87); }
-.gd-theme-light .secondary-text-color, .gd-theme-light .display4, .gd-theme-light .display3, .gd-theme-light .display2, .gd-theme-light #appbar #appbar-extension .app-view-title, #appbar #appbar-extension .gd-theme-light .app-view-title, .gd-theme-light .display1, .gd-theme-light .caption {
+.gd-theme-light .secondary-text-color, .gd-theme-light .display4, .gd-theme-light .display3, .gd-theme-light .display2, .gd-theme-light #appbar #appbar-extension .app-view-title, #appbar #appbar-extension .gd-theme-light .app-view-title, .gd-theme-light .display1, .gd-theme-light .caption, .gd-theme-light #appbar #appbar-nav nav ul li, #appbar #appbar-nav nav ul .gd-theme-light li, .gd-theme-light #appbar #appbar-extension nav ul li, #appbar #appbar-extension nav ul .gd-theme-light li {
   color: rgba(0, 0, 0, 0.54); }
 .gd-theme-light .disabled, .gd-theme-light .disabled-color, .gd-theme-light .hint-text-color {
   color: rgba(0, 0, 0, 0.26); }
   .gd-theme-light .disabled *, .gd-theme-light .disabled-color *, .gd-theme-light .hint-text-color * {
     color: rgba(0, 0, 0, 0.26); }
-.gd-theme-light .divider-color {
+.gd-theme-light .divider-color, .gd-theme-light #appbar #appbar-nav nav ul li:after, #appbar #appbar-nav nav ul .gd-theme-light li:after, .gd-theme-light #appbar #appbar-extension nav ul li:after, #appbar #appbar-extension nav ul .gd-theme-light li:after {
   background-color: rgba(0, 0, 0, 0.12); }
 
-.gd-theme-dark .icon-color, .gd-theme-dark i, .gd-theme-dark i, .gd-theme-dark .primary-text-color, .gd-theme-dark html, .gd-theme-dark *, .gd-theme-dark .headline, .gd-theme-dark .title, .gd-theme-dark .subhead, .gd-theme-dark .body2, .gd-theme-dark .body1, .gd-theme-dark button {
+.gd-theme-dark .icon-color, .gd-theme-dark i, .gd-theme-dark i, .gd-theme-dark .primary-text-color, .gd-theme-dark html, .gd-theme-dark *, .gd-theme-dark .headline, .gd-theme-dark .title, .gd-theme-dark .subhead, .gd-theme-dark .body2, .gd-theme-dark .body1, .gd-theme-dark button, .gd-theme-dark #appbar #appbar-nav nav ul li.active, #appbar #appbar-nav nav ul .gd-theme-dark li.active, .gd-theme-dark #appbar #appbar-extension nav ul li.active, #appbar #appbar-extension nav ul .gd-theme-dark li.active {
   color: white; }
-.gd-theme-dark .secondary-text-color, .gd-theme-dark .display4, .gd-theme-dark .display3, .gd-theme-dark .display2, .gd-theme-dark #appbar #appbar-extension .app-view-title, #appbar #appbar-extension .gd-theme-dark .app-view-title, .gd-theme-dark .display1, .gd-theme-dark .caption {
+.gd-theme-dark .secondary-text-color, .gd-theme-dark .display4, .gd-theme-dark .display3, .gd-theme-dark .display2, .gd-theme-dark #appbar #appbar-extension .app-view-title, #appbar #appbar-extension .gd-theme-dark .app-view-title, .gd-theme-dark .display1, .gd-theme-dark .caption, .gd-theme-dark #appbar #appbar-nav nav ul li, #appbar #appbar-nav nav ul .gd-theme-dark li, .gd-theme-dark #appbar #appbar-extension nav ul li, #appbar #appbar-extension nav ul .gd-theme-dark li {
   color: rgba(255, 255, 255, 0.7); }
 .gd-theme-dark .disabled, .gd-theme-dark .disabled-color, .gd-theme-dark .hint-text-color {
   color: rgba(255, 255, 255, 0.3); }
   .gd-theme-dark .disabled *, .gd-theme-dark .disabled-color *, .gd-theme-dark .hint-text-color * {
     color: rgba(255, 255, 255, 0.3); }
-.gd-theme-dark .divider-color {
+.gd-theme-dark .divider-color, .gd-theme-dark #appbar #appbar-nav nav ul li:after, #appbar #appbar-nav nav ul .gd-theme-dark li:after, .gd-theme-dark #appbar #appbar-extension nav ul li:after, #appbar #appbar-extension nav ul .gd-theme-dark li:after {
   background-color: rgba(255, 255, 255, 0.12); }
 
 .gd-theme-light {
@@ -2070,12 +2070,12 @@ html {
   font-size: 14px;
   font-weight: 400; }
 
-.single-line, .display4, .display3, .title, .caption, button {
+.single-line, .display4, .display3, .title, .caption, button, #appbar #appbar-nav nav ul li, #appbar #appbar-extension nav ul li {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-.mono, .display4, .display3, .display2, #appbar #appbar-extension .app-view-title, .display1 {
+.mono, .display4, .display3, .display2, #appbar #appbar-extension .app-view-title, .display1, #appbar #appbar-nav nav ul li, #appbar #appbar-extension nav ul li {
   font-family: "Roboto Mono", "Roboto", "Noto", sans-serif; }
 
 h1, h2, h3, h4, h5, h6, p, span {
@@ -2292,10 +2292,14 @@ header.site-header {
 
 #appbar {
   background-color: inherit;
+  box-sizing: border-box;
   color: inherit;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   position: relative;
   width: 100%;
   height: 56px;
@@ -2304,16 +2308,73 @@ header.site-header {
     height: 56px;
     line-height: 56px; }
   #appbar #appbar-nav, #appbar #appbar-extension {
-    position: fixed;
+    position: absolute;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 0 4px;
+    padding: 0 16px;
     overflow: hidden;
     will-change: transform, height, color, background-color;
     transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
+    #appbar #appbar-nav nav, #appbar #appbar-extension nav, #appbar #appbar-nav .app-menu, #appbar #appbar-extension .app-menu {
+      height: 100%;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      border: 1px solid; }
+    #appbar #appbar-nav .app-menu, #appbar #appbar-extension .app-menu {
+      max-width: 96px; }
+    #appbar #appbar-nav nav ul, #appbar #appbar-extension nav ul {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 100%; }
+      #appbar #appbar-nav nav ul li, #appbar #appbar-extension nav ul li {
+        display: inline-block;
+        position: relative;
+        float: left;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        min-width: 72px;
+        max-width: 264px;
+        padding: 0 12px;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        cursor: pointer; }
+        #appbar #appbar-nav nav ul li:after, #appbar #appbar-extension nav ul li:after {
+          content: "";
+          width: auto;
+          height: 2px;
+          position: absolute;
+          bottom: 0; }
+        #appbar #appbar-nav nav ul li:hover:after, #appbar #appbar-extension nav ul li:hover:after {
+          left: 0;
+          right: 0; }
   #appbar #appbar-extension {
-    position: relative; }
+    position: absolute; }
     #appbar #appbar-extension .app-view-title {
       position: absolute;
       padding-left: 12px;
