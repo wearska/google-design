@@ -1,0 +1,10 @@
+
+gd-appbar{
+    background-color: inherit;
+    color: inherit;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 1.75 * $increment-keyline;
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
